@@ -9,3 +9,7 @@
 - web scraper
 - GPT API client
 - Streamlit simple web IO
+
+## Instalation and run
+Start by installing dependencies with: `pip install -r requirements.txt`
+Run with: `streamlit run app.py`
