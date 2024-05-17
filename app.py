@@ -10,11 +10,6 @@ from bs4 import BeautifulSoup
 with open('api_key.json', 'r') as f:
   API_key = json.load(f)['api_key']
 
-def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("api_key", required=True, help="OpenAI API key")
-    return parser.parse_args()
-
 
 def main(args):
     print("APP: Hello form streamlit app")
@@ -22,6 +17,7 @@ def main(args):
     st.write("# GPT AI Assistant")
     st.write("Just input link to the article and I will summarize it for you.")
 
+    # example link = https://www.idnes.cz/brno/zpravy/palava-pavlovske-vrchy-zricenina-devicky-oprava.A240516_131402_brno-zpravy_mos1
     link = st.text_input("Link to the article")
     if st.button("Summarize"):
         st.write("Summarizing...")
@@ -49,6 +45,7 @@ def parse_link(link):
 
     return ["Article title", "Article text"]
 
+
 def summarize(text):
     """Summarize the text using GPT-3 API"""
     oai_client = openai.Client(api_key=API_key)
@@ -70,6 +67,7 @@ def summarize(text):
 
     return response.choices[0].message.content
 
+
 def answer_question(text, question):
     """Answer a question about the text using GPT-3 API"""
     oai_client = openai.Client(api_key=API_key)
@@ -83,6 +81,7 @@ def answer_question(text, question):
     )
 
     return response.choices[0].message.content
+
 
 if __name__ == '__main__':
     main()
