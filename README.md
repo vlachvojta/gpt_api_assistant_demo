@@ -1,9 +1,10 @@
 # GPT API assistatnt demo
 
-- [ ] input article url
-- [ ] scrape text of the article
-- [ ] ask a question
-- [ ] give answer based on the article
+- [x] input article url
+- [x] scrape text of the article
+- [x] summarize article
+- [x] ask a question
+- [x] give answer based on the article
 
 ## Componnents
 - web scraper
